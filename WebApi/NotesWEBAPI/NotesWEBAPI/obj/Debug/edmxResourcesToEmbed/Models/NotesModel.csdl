@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NotesAppDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Register">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Reminders" Relationship="Self.FK_Reminder_Register" FromRole="Register" ToRole="Reminder" />
+  </EntityType>
+  <EntityType Name="Reminder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tittle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Time" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="UserId" Type="Int32" />
+    <NavigationProperty Name="Register" Relationship="Self.FK_Reminder_Register" FromRole="Reminder" ToRole="Register" />
+  </EntityType>
+  <Association Name="FK_Reminder_Register">
+    <End Role="Register" Type="Self.Register" Multiplicity="0..1" />
+    <End Role="Reminder" Type="Self.Reminder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Register">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reminder">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NotesAppDataEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Registers" EntityType="Self.Register" />
+    <EntitySet Name="Reminders" EntityType="Self.Reminder" />
+    <AssociationSet Name="FK_Reminder_Register" Association="Self.FK_Reminder_Register">
+      <End Role="Register" EntitySet="Registers" />
+      <End Role="Reminder" EntitySet="Reminders" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
