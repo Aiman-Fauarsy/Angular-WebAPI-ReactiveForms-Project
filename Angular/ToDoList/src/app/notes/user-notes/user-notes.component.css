@@ -1,0 +1,41 @@
+.is-striped{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.is-info{
+    margin-top: 50px;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: center;
+}
+table{
+    width:900px;
+}
+
+button{
+    width:300px;
+}
+.input, .textarea {
+  width: 30%;
+}
+.is-medium{
+    background-color: brown;
+}
+
+.is-medium:hover{
+    background-color: green;
+}
+
+.is-grouped-centered{
+    margin-top:30px;
+}
+
+.is-success {
+    width: 120px;
+    margin-left: 30px;
+    min-width: 120px;
+}

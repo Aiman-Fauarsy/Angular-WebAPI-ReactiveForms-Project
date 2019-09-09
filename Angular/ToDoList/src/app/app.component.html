@@ -1,0 +1,24 @@
+
+<div class="navbar" style="background-color:transparent">
+  <div class="navbar-start">
+    <a class="navbar-item" routerLink="/home">
+      Home
+    </a>
+    <a class="navbar-item" *ngIf="RegService.isUserLoggedIn()" routerLink="/mynotes">
+      Reminder &nbsp;<i class="fas fa-clipboard-list"></i>
+    </a>
+   
+  </div>
+
+  <div class="navbar-end">
+    <a *ngIf="!RegService.isUserLoggedIn()" class="navbar-item" routerLink="/register">
+     Sign up / login&nbsp;<i class="fas fa-sign-in-alt"></i>
+    </a>
+    <a *ngIf="RegService.isUserLoggedIn()" (click)="Logout()" class="navbar-item"  routerLink="/register">
+     Logout&nbsp;<i class="fas fa-sign-out-alt"></i>
+     </a> 
+ </div>
+
+</div>
+
+<router-outlet></router-outlet>

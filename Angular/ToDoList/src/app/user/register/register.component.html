@@ -1,0 +1,73 @@
+<div class="columns is-mobile is-centered">
+    <div class="column is-half">
+        <div class="card">
+            <div class="card-content">
+              <p class="title">
+                Sign up today!
+              </p>
+              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()"> 
+              <div class="field">
+                  <div class="control">
+                      <span class="tag is-danger"><h3>User name <i class="fas fa-user"></i></h3></span>
+                    <input formControlName="UserName" class="input is-danger" type="text" placeholder="Username">
+                    <p *ngIf="registerForm.get('UserName').invalid && registerForm.get('UserName').touched" class="help is-danger">
+                    <strong style="color: red"> <small *ngIf="registerForm.get('UserName').errors?.required"> Username is requierd!</small>
+                     <small *ngIf="registerForm.get('UserName').errors?.minlength">Minimum lengeth is 3 charcters!</small></strong>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <span class="tag is-danger"><h3>Email <i class="fas fa-envelope"></i></h3></span>
+                      <input pattern="^[\w\.=-]+@[\w\.-]+\.[\w]{2,3}$" formControlName="Email" class="input is-danger" type="text" placeholder="Email input">
+                      <p *ngIf="registerForm.get('Email').invalid && registerForm.get('Email').touched" class="help is-danger">
+                         <strong style="color:red"> <small *ngIf="registerForm.get('Email').errors?.required"> Email is requierd!</small></strong>
+                         </p>
+                         <p *ngIf="registerForm.get('Email').invalid  && registerForm.get('Email').touched" class="help is-danger">
+                         <strong style="color:red"> Please enter vaild email!</strong>
+                         </p>
+                    </div>
+                  </div>
+
+                  <div class="field">
+                      <div class="control">
+                          <span class="tag is-danger"><h3>Password <i class="fas fa-lock"></i></h3></span>
+                        <input type="password" formControlName="Password" class="input is-danger" type="password" placeholder="Password input">
+                        <p *ngIf="registerForm.get('Password').invalid && registerForm.get('Password').touched" class="help is-danger">
+                           <strong style="color:red"> <small *ngIf="registerForm.get('Password').errors?.required"> Password is requierd!</small>
+                            <small *ngIf="registerForm.get('Password').errors?.minlength"> Please use 6 charcters as minimum</small></strong>
+                           </p>
+                      </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <span class="tag is-danger"><h3>confirm password <i class="fas fa-lock"></i></h3></span>
+                          <input type="password" [class.is-invalid]="registerForm.errors?.misMatch" formControlName="ReTypePass" class="input is-danger"  placeholder="Password input">
+                          <p class="help is-danger">
+                              <strong style="color:red"><small *ngIf="registerForm.errors?.misMatch">Password does not match</small></strong>
+                             </p>
+                        </div>
+                      </div>
+                      <button type="submit" [disabled]="registerForm.invalid" class="button is-danger" >Register</button>
+                    </form>
+            </div>
+          
+            <footer class="card-footer">
+        
+              <p class="card-footer-item">
+                <span class="account">
+                  Already have account? <a routerLink="/login" class=" is-danger">Login</a>
+                </span>
+              </p>
+            </footer>
+          </div>
+    </div>
+  </div>
+
+
+
+
+  
+
+  

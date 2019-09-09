@@ -1,0 +1,44 @@
+<div class="columns">
+  <div class="column is-full">
+    <h1><p class="bd-notification is-info" style="color:firebrick">Where all the magic Begins, it's time to set up goals and achieve them</p></h1>
+        
+      <div class="column is-3">
+          <form [formGroup]="addNotesForm" (ngSubmit)="onSubmit()"> 
+          <p class="bd-notification is-info">Add event into your TO-DO LIST</p>
+          <div class="field">
+              <label class="label">Tittle</label>
+              <div class="control">
+                <input formControlName="Tittle" class="input" type="text" placeholder="What is ur Tittle for event?">
+              </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Date</label>
+                <div class="control">
+                  <input formControlName="Date" min="{{setStartDate | date : 'yyyy-MM-dd'}}" (change)="selectStartDate($event)" type="date" class="input" >
+                </div>
+              </div>
+
+              <div class="field">
+                  <label class="label">Time</label>
+                  <div class="control">
+                    <input formControlName="Time" type="time" class="input">
+                  </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                      <textarea formControlName="Details" class="textarea is-info"></textarea>
+                    </div>
+                  </div>
+
+                  <input formControlName="UserId" type="text" value="{{userId}}"  readonly hidden>
+                 <button class="button is-success" type="submit">Add</button>
+                 <button class="button is-danger" type="button" [mat-dialog-close] (click)="onClose()">Close</button>
+                </form>     
+                
+      </div>
+
+
+  </div>
+</div>

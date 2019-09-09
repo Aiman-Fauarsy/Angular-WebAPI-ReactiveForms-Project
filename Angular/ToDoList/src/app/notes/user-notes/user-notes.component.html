@@ -1,0 +1,29 @@
+
+<h1><p class="bd-notification is-info" style="color:firebrick">Where all the magic Begins, it's time to set up goals and achieve them</p></h1>
+
+<div class="field is-grouped is-grouped-centered">
+
+      <input class="input" type="text" placeholder="Find Reminder by Date, Tittle or Time" [(ngModel)]="searchFilter">
+      <button type="submit" class="button is-success" (click)="addNote()">Add new goal</button>
+    </div>
+
+  
+<table class="table is-striped" align="center">
+  <tr style="background-color:black;">
+
+  <th style="color:white">Tittle</th>
+  <th style="color:white">Date</th>
+  <th style="color:white">Time</th>
+  <th style="color:white">Details</th>
+  <th style="color:white">Delete</th>
+</tr>
+<tr>
+<tr *ngFor="let notes of myNotes | notesFilter:searchFilter">
+  <th *ngIf="notes.UserId == myId">{{notes.Tittle}}</th>
+  <th *ngIf="notes.UserId == myId">{{notes.Date | date}}</th>
+  <th *ngIf="notes.UserId == myId">{{notes.Time}}</th>
+  <th *ngIf="notes.UserId == myId" (click)="ShowDetails(notes.Tittle,notes.Details,notes.Date)"><a>Read</a></th>
+  <th *ngIf="notes.UserId == myId"><a class="delete is-medium" (click)="deleteNote(notes.Id)"></a></th>
+</tr>
+
+</table>
