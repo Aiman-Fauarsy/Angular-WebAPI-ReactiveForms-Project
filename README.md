@@ -8,9 +8,10 @@ It's a small project ( To Do List App ), where you should register ( Authenticat
 <strong> Inside this project </strong>
 1) I have used <strong>Reactive Forms</strong> and Added Custom and Cross field validations.
 2) I also used <strong>Regular Expression</strong>, such as Email pattern
-3) I used with filters such as search filter.<br>
-4)I used with MatDialog ( Angular Materials).
+3) I used with filters such as search filter
+4)I used with MatDialog ( Angular Materials)
 5) I used Bulma as open source CSS framework
+6)I worked with WEBAPI and Entity frameWork and installed nugget packages to unable cors, and add token system for Authentication and Authorization...
 
 
 <strong>#Please before running this project remember! </strong>
