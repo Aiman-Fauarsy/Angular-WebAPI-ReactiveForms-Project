@@ -10,7 +10,7 @@ It's a small project ( To Do List App ), where you should register ( Authenticat
 2) I also used <strong>Regular Expression</strong>, such as Email pattern
 3) I used filters such as search filter
 4)I used with MatDialog ( Angular Materials)
-5) I used Bulma as open source CSS framework
+5) I used Bulma as open source CSS framework/
 6)I worked with WEBAPI and Entity frameWork and installed nugget packages to unable cors, and token system for Authentication and Authorization...
 
 
