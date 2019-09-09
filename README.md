@@ -2,8 +2,8 @@
 
 Angular8 + Web Api ( TO DO LIST Project ) Working with ReactiveForms.
 
-<strong> ABOUT THIS PROJECT </strong>
-It's a small project ( To Do List App), where you should register(Authentication  & Authorization) to use the App, Using the app will allows you to add a goal to achieve just like in To Do List. and you can remove it when it's done.
+<strong> ABOUT THIS PROJECT </strong><br>
+It's a small project ( To Do List App ), where you should register ( Authentication  & Authorization ) to use the App, Using the app will allows you to add a goal to achieve just like in to do list. and you can remove it when it's done.
 
 <strong> Inside this project </strong>
 1) I have used <strong>Reactive Forms</strong> and Added Custom and Cross field validations.
